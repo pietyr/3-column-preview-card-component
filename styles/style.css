@@ -1,0 +1,145 @@
+:root {
+	box-sizing: border-box;
+
+	--bright-orange: hsl(31, 77%, 52%);
+	--dark-cyan: hsl(184, 100%, 22%);
+	--very-dark-cyan: hsl(179, 100%, 13%);
+
+	--transparent-white: hsla(0, 0%, 100%, 0.75);
+	--very-light-gray: hsl(0, 0%, 95%);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	min-height: 100vh;
+	margin: 0;
+	padding: 5.5rem 1.5rem;
+
+	font-family: "Lexend Deca", sans-serif;
+	font-weight: 400;
+	font-size: 0.9375rem;
+	color: var(--transparent-white);
+
+	background-color: var(--very-light-gray);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+article.card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 3rem;
+	max-width: 25rem;
+}
+
+p {
+	line-height: 1.5;
+}
+
+article.sedans {
+	background-color: var(--bright-orange);
+}
+
+article.suvs {
+	background-color: var(--dark-cyan);
+}
+
+article.luxury {
+	background-color: var(--very-dark-cyan);
+}
+
+h2 {
+	font-family: "Big Shoulders Display", cursive;
+	font-weight: 700;
+	font-size: 2.5rem;
+	color: var(--very-light-gray);
+	text-transform: uppercase;
+}
+
+button {
+	display: block;
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+	overflow: visible;
+	text-transform: capitalize;
+	-webkit-appearance: button;
+	cursor: pointer;
+
+	margin-top: 1.875rem;
+	padding: 1rem 2rem;
+	border: none;
+	border-radius: 2rem;
+
+	background-color: var(--very-light-gray);
+}
+
+.sedans button {
+	color: var(--bright-orange);
+}
+
+.suvs button {
+	color: var(--dark-cyan);
+}
+
+.luxury button {
+	color: var(--very-dark-cyan);
+}
+
+@media (min-width: 790px) {
+	main {
+		flex-direction: row;
+	}
+
+	article.card {
+		max-width: 19rem;
+	}
+
+	button {
+		margin-top: 5rem;
+	}
+
+	p {
+		margin-top: 0;
+	}
+}
+
+@media (hover: hover) {
+	button:hover {
+		padding: calc(1rem - 1px) calc(2rem - 1px);
+		border: 1px solid var(--very-light-gray);
+	}
+
+	.sedans button:hover {
+		color: var(--very-light-gray);
+		background-color: var(--bright-orange);
+	}
+
+	.suvs button:hover {
+		color: var(--very-light-gray);
+		background-color: var(--dark-cyan);
+	}
+
+	.luxury button:hover {
+		color: var(--very-light-gray);
+		background-color: var(--very-dark-cyan);
+	}
+}
